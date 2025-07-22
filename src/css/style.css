@@ -252,12 +252,12 @@ html {
     position: relative;
 }
 
-.timetable__item-teams-logo {
+.item__teams-logo {
     object-fit: contain;
     filter: drop-shadow(0 0 2px #000);
 }
 
-.timetable__item-watch-btn {
+.item__watch-btn {
     position: absolute;
     top: 50%;
     left: 50%;
