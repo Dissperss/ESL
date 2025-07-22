@@ -24,8 +24,6 @@ Thumbs.db
 *.bak
 
 # ▶ CSS artifacts (если SCSS компилируется отдельно)
-*.css
-*.css.map
 
 # ▶ Optional lockfiles (оставь только нужный)
 # yarn.lock
