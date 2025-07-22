@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -8,10 +12,11 @@ p,
 ol,
 ul {
     margin: 0;
+    padding: 0;
 }
 
-ol[role="list"],
-ul[role="list"] {
+ol[role='list'],
+ul[role='list'] {
     list-style: none;
     padding-inline: 0;
 }
@@ -26,7 +31,7 @@ body {
 }
 
 html {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -42,12 +47,12 @@ html {
     --black: #282830;
     --dark-grey: #757c84;
     --light-grey: #fafafa;
-    --font-family: "Roboto", sans-serif;
+    --font-family: 'Roboto', sans-serif;
 }
 
 .promo {
     padding-top: 15px;
-    background: url("../img/promo/main_bg.jpg") center center / cover no-repeat;
+    background: url('../img/promo/main_bg.jpg') center center / cover no-repeat;
     min-height: 994px;
 }
 
@@ -62,7 +67,7 @@ html {
     position: absolute;
     top: 90px;
     display: block;
-    content: "";
+    content: '';
     width: 740px;
     height: 1px;
     background-color: #f3a917;
@@ -141,7 +146,6 @@ html {
 }
 
 .timetable__matches-btn {
-    margin-top: 40px;
     padding: 15px 31px;
     min-width: 152px;
     border: 0;
@@ -191,6 +195,11 @@ html {
     box-shadow: 0 0 25px rgba(255, 168, 0, 0.6);
 }
 
+.timetables__slider {
+    display: flex;
+    margin-top: 40px;
+}
+
 .timetable__item:hover .timetable__item-watch-btn {
     opacity: 1;
     pointer-events: auto;
@@ -207,7 +216,7 @@ html {
 .timetable__item-header::after {
     position: absolute;
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     height: 1px;
     top: 50px;
