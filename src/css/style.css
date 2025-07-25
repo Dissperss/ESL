@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -8,6 +12,7 @@ p,
 ol,
 ul {
     margin: 0;
+    padding: 0;
 }
 
 ol[role="list"],
@@ -26,7 +31,7 @@ body {
 }
 
 html {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -140,8 +145,20 @@ html {
     color: var(--white);
 }
 
-.timetable__matches-btn {
+.timetables__btns {
+    display: flex;
     margin-top: 40px;
+}
+
+.timetables__btns::before {
+    position: absolute;
+    content: "";
+    display: block;
+    border: 2px solid #f3a917;
+    width: 1627px;
+}
+
+.timetable__matches-btn {
     padding: 15px 31px;
     min-width: 152px;
     border: 0;
@@ -327,4 +344,107 @@ html {
     line-height: 167%;
     letter-spacing: 0.01em;
     color: var(--dark-grey);
+}
+
+.stage {
+    padding: 115px 0;
+    background-color: #f3a917;
+}
+
+.stage__wrapper {
+    display: flex;
+    gap: 132px;
+}
+
+.stage__block:first-child {
+    margin-top: 30px;
+    width: 40%;
+}
+
+.stage__block-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 58px;
+}
+
+.stage__block-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 109%;
+    color: #000;
+}
+
+.stage__block-text {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 167%;
+    letter-spacing: 0.01em;
+    color: #000;
+}
+
+.block__item {
+    text-align: center;
+    img {
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.block__item::after {
+    position: absolute;
+    top: 39%;
+    margin-left: 200px;
+    display: block;
+    content: "";
+    width: 77px;
+    height: 4px;
+    background: #ffffff;
+}
+
+.block__item:last-child::after {
+    display: none;
+}
+
+.block__item-descr {
+    margin-top: 33px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 156%;
+    letter-spacing: 0.01em;
+    /* text-align: center; */
+    color: #000;
+}
+
+.block__item-shedule {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 156%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #000;
+}
+
+.stage__block-reg {
+    margin: 85px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    border-radius: 5px;
+    padding: 10px;
+    width: 341px;
+    height: 60px;
+}
+
+.block__reg-text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 156%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #000;
 }
