@@ -158,26 +158,7 @@ html {
     width: 78.5%;
 }
 
-.timetable__matches-btn.active {
-    background: #f3a917;
-    color: var(--white);
-    border: none;
-}
-
-.timetable__battles-btn.active {
-    background: #f3a917;
-    color: var(--white);
-    border: none;
-}
-
-/* Неактивные: убрать фон и задать границу */
-.timetable__matches-btn:not(.active),
-.timetable__battles-btn:not(.active) {
-    background: none;
-    border: 1px solid #f3a917;
-    color: var(--white);
-}
-.timetable__matches-btn {
+.timetable__tab {
     padding: 15px 31px;
     min-width: 152px;
     border: 0;
@@ -190,21 +171,25 @@ html {
     cursor: pointer;
 }
 
-.timetable__battles-btn {
-    border: 1px solid #f3a917;
-    padding: 15px 31px;
-    min-width: 152px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 167%;
-    letter-spacing: 0.01em;
+.timetable__tab.active {
+    background: #f3a917;
     color: var(--white);
-    cursor: pointer;
+    border: none;
+}
+
+.timetable__tab:not(.active) {
     background: none;
+    border: 1px solid #f3a917;
+    color: var(--white);
+}
+
+.active .timetable__block {
+    display: flex;
 }
 
 .timetable__content {
     margin-top: 90px;
+    position: relative;
 }
 
 .timetable__block {
@@ -212,25 +197,18 @@ html {
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: nowrap;
-    overflow: hidden;
-    gap: 40px;
 }
 
 .timetable__block.active {
     display: flex;
-    overflow: hidden;
 }
-
-/* .timetable__block.active .timetable__item {
-    flex: 1;
-} */
 
 .timetable__item {
     position: relative;
     background-color: #333;
     border-radius: 10px;
-    min-width: calc(25% - 40px);
     padding: 40px 35px 30px 30px;
+    height: 400px;
 }
 
 .timetable__item:hover {
@@ -447,58 +425,23 @@ html {
     text-align: center;
 }
 
-.swiper {
-    max-width: 350px;
-    margin: 0 auto;
-    padding-bottom: 20px;
-}
-
-.swiper-wrapper {
-    transition-timing-function: linear; /* Плавная прокрутка */
-}
-
-.swiper-slide {
-    width: calc(25% - 30px); /* 4 слайда в ряд с учётом spaceBetween */
-    opacity: 0.5;
-    transition: opacity 0.3s;
-}
-
-.swiper-slide-active {
-    opacity: 1;
-}
-
-.swiper-slide img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
-    display: none; /* Скрываем стандартные стрелки, используем кастомные */
+    width: 50px;
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 20px;
+.pagination {
+    left: 50% !important;
+    top: calc(100% + 28px) !important;
+    transform: translateX(-50%);
 }
 
-.custom-prev,
-.custom-next {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fdb714;
-    border-radius: 50%;
-    background: transparent;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.swiper-pagination {
-    bottom: -20px !important;
+.navigation {
     position: absolute;
+    width: 300px;
     left: 50%;
     transform: translateX(-50%);
+    bottom: -40px;
 }
 
 .swiper-pagination-bullet {
