@@ -218,7 +218,7 @@ html {
 .timetable__item:hover .item__watch-btn {
     opacity: 1;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1.03);
+    /* transform: translate(-50%, -50%) scale(1.03); */
 }
 
 .timetable__item-header {
@@ -273,7 +273,6 @@ html {
     display: flex;
     align-items: center;
     gap: 20px;
-    position: relative;
 }
 
 .item__teams-logo {
@@ -285,6 +284,7 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translateX(-50%);
     background-color: #f3a917;
     border: none;
     padding: 10px 20px;
@@ -302,6 +302,7 @@ html {
     opacity: 0;
     transition: opacity 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
 }
 
 .timetable__item-players {
