@@ -15,8 +15,8 @@ ul {
     padding: 0;
 }
 
-ol[role="list"],
-ul[role="list"] {
+ol[role='list'],
+ul[role='list'] {
     list-style: none;
     padding-inline: 0;
 }
@@ -31,14 +31,14 @@ body {
 }
 
 html {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
 }
 
 .container {
-    min-width: 1520px;
+    max-width: 1520px;
     position: relative;
-    padding: 0 200px;
+    margin: 0 auto;
 }
 
 :root {
@@ -47,12 +47,12 @@ html {
     --black: #282830;
     --dark-grey: #757c84;
     --light-grey: #fafafa;
-    --font-family: "Roboto", sans-serif;
+    --font-family: 'Roboto', sans-serif;
 }
 
 .promo {
     padding-top: 15px;
-    background: url("../img/promo/main_bg.jpg") center center / cover no-repeat;
+    background: url('../img/promo/main_bg.jpg') center center / cover no-repeat;
     min-height: 994px;
 }
 
@@ -67,7 +67,7 @@ html {
     position: absolute;
     top: 90px;
     display: block;
-    content: "";
+    content: '';
     width: 740px;
     height: 1px;
     background-color: #f3a917;
@@ -152,7 +152,7 @@ html {
 
 .timetables__btns::before {
     position: absolute;
-    content: "";
+    content: '';
     display: block;
     border: 2px solid #f3a917;
     width: 78.5%;
@@ -211,6 +211,8 @@ html {
     display: none;
     justify-content: space-between;
     align-items: stretch;
+    flex-wrap: nowrap;
+    overflow: hidden;
     gap: 40px;
 }
 
@@ -227,7 +229,7 @@ html {
     position: relative;
     background-color: #333;
     border-radius: 10px;
-    width: 100%;
+    min-width: calc(25% - 40px);
     padding: 40px 35px 30px 30px;
 }
 
@@ -251,7 +253,7 @@ html {
 .timetable__item-header::after {
     position: absolute;
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     height: 1px;
     top: 50px;
@@ -387,7 +389,7 @@ html {
 .timetable__block--battles .timetable__item-header::after {
     position: absolute;
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     height: 1px;
     top: 35px;
@@ -560,7 +562,7 @@ html {
     top: 39%;
     margin-left: 200px;
     display: block;
-    content: "";
+    content: '';
     width: 77px;
     height: 4px;
     background: #ffffff;
@@ -613,7 +615,7 @@ html {
 
 .footer {
     padding: 500px 0 90px 0;
-    background: url("../img/footer/footer_bg.jpg") center top / cover no-repeat;
+    background: url('../img/footer/footer_bg.jpg') center top / cover no-repeat;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -692,7 +694,7 @@ html {
 }
 
 .table__cell:first-child::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: -10px;

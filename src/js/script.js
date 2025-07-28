@@ -37,8 +37,8 @@ const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     navigation: {
-        nextEl: ".custom-next",
-        prevEl: ".custom-prev",
+        nextEl: ".next",
+        prevEl: ".prev",
     },
     pagination: {
         el: ".swiper-pagination",
