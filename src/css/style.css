@@ -28,6 +28,7 @@ img {
 
 body {
     margin: 0;
+    overflow-x: auto;
 }
 
 html {
@@ -41,10 +42,12 @@ html {
     margin: 0 auto;
     @media screen and (max-width: 1200px) {
         max-width: 1020px;
-        padding: 0 50px;
     }
     @media screen and (max-width: 768px) {
-        max-width: 720px;
+        max-width: 740px;
+    }
+    @media screen and (max-width: 370px) {
+        max-width: 360px;
     }
 }
 
@@ -62,6 +65,10 @@ html {
     background: url("../img/promo/main_bg.jpg") center center / cover no-repeat;
     min-height: 994px;
     @media screen and (max-width: 1200px) {
+        padding: 15px 30px 0 30px;
+    }
+    @media screen and (max-width: 375px) {
+        padding: 15px 15px 0 15px;
     }
 }
 
@@ -72,6 +79,12 @@ html {
     align-items: center;
     @media screen and (max-width: 1200px) {
         justify-content: space-between;
+    }
+    @media screen and (max-width: 768px) {
+        gap: 100px;
+    }
+    @media screen and (max-width: 375px) {
+        gap: 10px;
     }
 }
 
@@ -105,12 +118,24 @@ html {
     max-width: 700px;
 }
 
+.promo__pubg-img {
+    @media screen and (max-width: 768px) {
+        margin: 0 auto;
+    }
+}
+
 .promo__title {
     margin-top: 35px;
     font-weight: 700;
     font-size: 60px;
     color: var(--white);
     letter-spacing: 0.04em;
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 40px;
+    }
 }
 
 .promo__text {
@@ -119,6 +144,12 @@ html {
     font-size: 20px;
     letter-spacing: 0.01em;
     color: var(--light-grey);
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 15px;
+    }
 }
 
 .promo__read-btn {
@@ -133,15 +164,19 @@ html {
     text-transform: uppercase;
     color: #000;
     cursor: pointer;
+    border: none;
     @media screen and (max-width: 1200px) {
         display: block;
         margin: 220px auto 0 auto;
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 14px;
     }
 }
 
 .promo__get-btn {
     margin-left: 35px;
-    border: 1px solid #f3a917;
+    border: 3px solid #f3a917;
     padding: 15px 20px;
     min-width: 246px;
     font-weight: 600;
@@ -154,6 +189,10 @@ html {
     @media screen and (max-width: 1200px) {
         display: block;
         margin: 10px auto 0 auto;
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 14px;
+        margin: 5px auto 0 auto;
     }
 }
 
@@ -182,26 +221,7 @@ html {
     width: 100%;
 }
 
-.timetable__matches-btn.active {
-    background: #f3a917;
-    color: var(--white);
-    border: none;
-}
-
-.timetable__battles-btn.active {
-    background: #f3a917;
-    color: var(--white);
-    border: none;
-}
-
-/* Неактивные: убрать фон и задать границу */
-.timetable__matches-btn:not(.active),
-.timetable__battles-btn:not(.active) {
-    background: none;
-    border: 1px solid #f3a917;
-    color: var(--white);
-}
-.timetable__matches-btn {
+.timetable__tab {
     padding: 15px 31px;
     min-width: 152px;
     border: 0;
@@ -214,21 +234,25 @@ html {
     cursor: pointer;
 }
 
-.timetable__battles-btn {
-    border: 1px solid #f3a917;
-    padding: 15px 31px;
-    min-width: 152px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 167%;
-    letter-spacing: 0.01em;
+.timetable__tab.active {
+    background: #f3a917;
     color: var(--white);
-    cursor: pointer;
+    border: none;
+}
+
+.timetable__tab:not(.active) {
     background: none;
+    border: 1px solid #f3a917;
+    color: var(--white);
+}
+
+.active .timetable__block {
+    display: flex;
 }
 
 .timetable__content {
     margin-top: 90px;
+    position: relative;
 }
 
 .timetable__block {
@@ -236,25 +260,18 @@ html {
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: nowrap;
-    overflow: hidden;
-    gap: 40px;
 }
 
 .timetable__block.active {
     display: flex;
-    overflow: hidden;
 }
-
-/* .timetable__block.active .timetable__item {
-    flex: 1;
-} */
 
 .timetable__item {
     position: relative;
     background-color: #333;
     border-radius: 10px;
-    min-width: calc(25% - 30px);
     padding: 40px 35px 30px 30px;
+    height: 400px;
 }
 
 .timetable__item:hover {
@@ -264,7 +281,7 @@ html {
 .timetable__item:hover .item__watch-btn {
     opacity: 1;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1.03);
+    /* transform: translate(-50%, -50%) scale(1.03); */
 }
 
 .timetable__item-header {
@@ -319,7 +336,6 @@ html {
     display: flex;
     align-items: center;
     gap: 20px;
-    position: relative;
 }
 
 .item__teams-logo {
@@ -331,6 +347,7 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translateX(-50%);
     background-color: #f3a917;
     border: none;
     padding: 10px 20px;
@@ -348,6 +365,7 @@ html {
     opacity: 0;
     transition: opacity 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
 }
 
 .timetable__item-players {
@@ -489,58 +507,23 @@ html {
     text-align: center;
 }
 
-.swiper {
-    max-width: 350px;
-    margin: 0 auto;
-    padding-bottom: 20px;
-}
-
-.swiper-wrapper {
-    transition-timing-function: linear; /* Плавная прокрутка */
-}
-
-.swiper-slide {
-    width: calc(25% - 30px); /* 4 слайда в ряд с учётом spaceBetween */
-    opacity: 0.5;
-    transition: opacity 0.3s;
-}
-
-.swiper-slide-active {
-    opacity: 1;
-}
-
-.swiper-slide img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
-    display: none; /* Скрываем стандартные стрелки, используем кастомные */
+    width: 50px;
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 20px;
+.pagination {
+    left: 50% !important;
+    top: calc(100% + 28px) !important;
+    transform: translateX(-50%);
 }
 
-.custom-prev,
-.custom-next {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fdb714;
-    border-radius: 50%;
-    background: transparent;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.swiper-pagination {
-    bottom: -20px !important;
+.navigation {
     position: absolute;
+    width: 300px;
     left: 50%;
     transform: translateX(-50%);
+    bottom: -40px;
 }
 
 .swiper-pagination-bullet {
@@ -555,16 +538,27 @@ html {
 .stage {
     padding: 115px 0;
     background-color: #f3a917;
+    @media screen and (max-width: 375px) {
+        padding: 50px 10px;
+    }
 }
 
 .stage__wrapper {
     display: flex;
     gap: 132px;
+    @media screen and (max-width: 375px) {
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+    }
 }
 
 .stage__block:first-child {
     margin-top: 30px;
     width: 40%;
+    @media screen and (max-width: 375px) {
+        width: 100%;
+    }
 }
 
 .stage__block-wrapper {
@@ -578,6 +572,9 @@ html {
     font-size: 32px;
     line-height: 109%;
     color: #000;
+    @media screen and (max-width: 375px) {
+        text-align: center;
+    }
 }
 
 .stage__block-text {
@@ -587,6 +584,9 @@ html {
     line-height: 167%;
     letter-spacing: 0.01em;
     color: #000;
+    @media screen and (max-width: 375px) {
+        text-align: center;
+    }
 }
 
 .block__item {
@@ -596,6 +596,10 @@ html {
         height: 80px;
         display: block;
         margin: 0 auto;
+        @media screen and (max-width: 375px) {
+            width: 70px;
+            height: 70px;
+        }
     }
 }
 
@@ -611,10 +615,27 @@ html {
     @media screen and (max-width: 1200px) {
         margin-left: 150px;
     }
+    @media screen and (max-width: 768px) {
+        margin-left: 90px;
+        width: 60px;
+    }
+    @media screen and (max-width: 375px) {
+        top: 50%;
+        margin-left: 85px;
+        width: 50px;
+    }
 }
 
 .block__item:last-child::after {
     display: none;
+}
+
+.block__item:nth-child(2)::after {
+    @media screen and (max-width: 375px) {
+        top: 50%;
+        margin-left: 65px;
+        width: 50px;
+    }
 }
 
 .block__item-descr {
@@ -625,6 +646,9 @@ html {
     letter-spacing: 0.01em;
     /* text-align: center; */
     color: #000;
+    @media screen and (max-width: 375px) {
+        font-size: 14px;
+    }
 }
 
 .block__item-shedule {
@@ -665,11 +689,22 @@ html {
     align-items: flex-end;
     justify-content: flex-end;
     min-height: 100vh;
+    @media screen and (max-width: 375px) {
+        padding: 100px 0 90px 0;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .footer .container {
     margin: 0;
     padding: 0 200px;
+    @media screen and (max-width: 768px) {
+        padding: 0 50px;
+    }
+    @media screen and (max-width: 375px) {
+        padding: 0;
+    }
 }
 
 /* .footer__wrapper {
@@ -679,7 +714,10 @@ html {
 } */
 
 .footer__table-block {
-    width: auto;
+    width: 100%;
+    @media screen and (max-width: 375px) {
+        overflow-x: auto;
+    }
 }
 
 .footer__title {
@@ -688,6 +726,9 @@ html {
     font-size: 32px;
     line-height: 141%;
     color: var(--white);
+    @media screen and (max-width: 375px) {
+        font-size: 24px;
+    }
 }
 
 .footer__subtitle {
@@ -696,14 +737,25 @@ html {
     font-size: 25px;
     line-height: 180%;
     color: var(--white);
+    @media screen and (max-width: 375px) {
+        font-size: 20px;
+    }
 }
 
 .footer__table {
-    min-width: 650px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     list-style: none;
+    @media screen and (max-width: 768px) {
+        min-width: 100%;
+    }
+    @media screen and (max-width: 375px) {
+        margin-top: 5px;
+        width: max-content;
+        min-width: 300px;
+    }
 }
 
 .table__row {
@@ -712,6 +764,9 @@ html {
     padding: 10px;
     border: 1px solid #ffaa00;
     background-color: #292a2f;
+    @media screen and (max-width: 375px) {
+        padding: 8px 5px;
+    }
 }
 
 .table__header {
@@ -733,6 +788,10 @@ html {
     display: flex;
     align-items: center;
     gap: 8px;
+    @media screen and (max-width: 375px) {
+        font-size: 14px;
+        gap: 4px;
+    }
 }
 
 .table__cell:first-child {
@@ -751,6 +810,10 @@ html {
     width: 1px;
     height: 160%;
     background-color: #ffaa00; /* цвет бордера */
+    @media screen and (max-width: 375px) {
+        top: -8px;
+        height: 167%;
+    }
 }
 
 .table__cell:nth-child(2) {
@@ -776,5 +839,12 @@ html {
         color: var(--white);
         text-transform: uppercase;
         text-decoration: none;
+    }
+    @media screen and (max-width: 375px) {
+        margin-top: 35px;
+        gap: 25px;
+        a {
+            font-size: 15px;
+        }
     }
 }
