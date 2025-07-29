@@ -15,8 +15,8 @@ ul {
     padding: 0;
 }
 
-ol[role='list'],
-ul[role='list'] {
+ol[role="list"],
+ul[role="list"] {
     list-style: none;
     padding-inline: 0;
 }
@@ -31,7 +31,7 @@ body {
 }
 
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -39,6 +39,13 @@ html {
     max-width: 1520px;
     position: relative;
     margin: 0 auto;
+    @media screen and (max-width: 1200px) {
+        max-width: 1020px;
+        padding: 0 50px;
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 720px;
+    }
 }
 
 :root {
@@ -47,13 +54,15 @@ html {
     --black: #282830;
     --dark-grey: #757c84;
     --light-grey: #fafafa;
-    --font-family: 'Roboto', sans-serif;
+    --font-family: "Roboto", sans-serif;
 }
 
 .promo {
     padding-top: 15px;
-    background: url('../img/promo/main_bg.jpg') center center / cover no-repeat;
+    background: url("../img/promo/main_bg.jpg") center center / cover no-repeat;
     min-height: 994px;
+    @media screen and (max-width: 1200px) {
+    }
 }
 
 .header {
@@ -61,16 +70,23 @@ html {
     display: flex;
     gap: 405px;
     align-items: center;
+    @media screen and (max-width: 1200px) {
+        justify-content: space-between;
+    }
 }
 
 .header::after {
     position: absolute;
     top: 90px;
     display: block;
-    content: '';
+    content: "";
     width: 740px;
     height: 1px;
     background-color: #f3a917;
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        height: 2px;
+    }
 }
 
 .header__img {
@@ -117,6 +133,10 @@ html {
     text-transform: uppercase;
     color: #000;
     cursor: pointer;
+    @media screen and (max-width: 1200px) {
+        display: block;
+        margin: 220px auto 0 auto;
+    }
 }
 
 .promo__get-btn {
@@ -131,6 +151,10 @@ html {
     color: var(--white);
     cursor: pointer;
     background: none;
+    @media screen and (max-width: 1200px) {
+        display: block;
+        margin: 10px auto 0 auto;
+    }
 }
 
 .timetable {
@@ -152,10 +176,10 @@ html {
 
 .timetables__btns::before {
     position: absolute;
-    content: '';
+    content: "";
     display: block;
     border: 2px solid #f3a917;
-    width: 78.5%;
+    width: 100%;
 }
 
 .timetable__matches-btn.active {
@@ -229,7 +253,7 @@ html {
     position: relative;
     background-color: #333;
     border-radius: 10px;
-    min-width: calc(25% - 40px);
+    min-width: calc(25% - 30px);
     padding: 40px 35px 30px 30px;
 }
 
@@ -253,7 +277,7 @@ html {
 .timetable__item-header::after {
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     width: 100%;
     height: 1px;
     top: 50px;
@@ -368,10 +392,28 @@ html {
 
 .timetable__block .timetable__item:nth-child(2) .timetable__item-footer {
     margin-top: 39px;
+    @media screen and (max-width: 1200px) {
+        margin-top: 15px;
+    }
 }
 
 .timetable__block .timetable__item:nth-child(3) .timetable__item-footer {
     margin-top: 39px;
+    @media screen and (max-width: 1200px) {
+        margin-top: 15px;
+    }
+}
+
+.timetable__block .timetable__item:nth-child(1) .timetable__item-footer {
+    @media screen and (max-width: 1200px) {
+        margin-top: 38px;
+    }
+}
+
+.timetable__block .timetable__item:nth-child(4) .timetable__item-footer {
+    @media screen and (max-width: 1200px) {
+        margin-top: 38px;
+    }
 }
 
 .timetable__item-countdown {
@@ -389,7 +431,7 @@ html {
 .timetable__block--battles .timetable__item-header::after {
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     width: 100%;
     height: 1px;
     top: 35px;
@@ -559,13 +601,16 @@ html {
 
 .block__item::after {
     position: absolute;
-    top: 39%;
+    top: 25%;
     margin-left: 200px;
     display: block;
-    content: '';
+    content: "";
     width: 77px;
     height: 4px;
     background: #ffffff;
+    @media screen and (max-width: 1200px) {
+        margin-left: 150px;
+    }
 }
 
 .block__item:last-child::after {
@@ -615,18 +660,23 @@ html {
 
 .footer {
     padding: 500px 0 90px 0;
-    background: url('../img/footer/footer_bg.jpg') center top / cover no-repeat;
+    background: url("../img/footer/footer_bg.jpg") center top / cover no-repeat;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-end;
     min-height: 100vh;
 }
 
-.footer__wrapper {
+.footer .container {
+    margin: 0;
+    padding: 0 200px;
+}
+
+/* .footer__wrapper {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 .footer__table-block {
     width: auto;
@@ -650,7 +700,6 @@ html {
 
 .footer__table {
     min-width: 650px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -694,7 +743,7 @@ html {
 }
 
 .table__cell:first-child::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: -10px;
